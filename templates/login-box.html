@@ -1,0 +1,49 @@
+<form id="login-form">
+  <span>Please Login to Gain Access</span>
+  <input placeholder="Username">
+  <input type="password" placeholder="Password">
+  <button>
+    Login
+  </button>
+</form>
+
+<style>
+  #login-form, #login-form * {
+    border-radius: 25px;
+    font-size: 1.2rem;
+  }
+
+  #login-form {
+    display: block;
+    width: 18rem;
+    height: 20rem;
+
+    background: #3D3935;
+    display: grid;
+    grid-template-rows: 4rem 2rem 2rem 5rem 1fr;
+    gap: 2rem;
+    place-items: center;
+  }
+
+  #login-form>span {
+    color: #f1f0ef;
+  }
+
+  #login-form>input {
+    width: 16rem;
+    height: 2rem;
+    color: black;
+  }
+
+  #login-form>input::placeholder {
+    color: #181818;
+    opacity: 0.9;
+  }
+
+  #login-form>button {
+    color: #181818;
+    border: .1rem black solid;
+    width: 7rem;
+    height: 2rem;
+  }
+</style>
