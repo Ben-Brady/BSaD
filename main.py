@@ -5,8 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  render_template("index.html")
-    return 'Hello from Flask!'
+  return render_template("index.html")
 
 
 app.run(host='0.0.0.0', port=81)
