@@ -1,0 +1,52 @@
+<nav>
+    <a id="home-button" href="/">
+        DWK
+    </a>
+    {% if user %}
+        <a id="account-button" href="/account">
+            <img src="static/user.svg"/>
+        </a>
+    {% endif %}
+</nav>
+
+<style>
+    nav {
+        display: block;
+        position: sticky;
+        height: 100vh;
+
+        padding-top: 1rem;
+        border-right: .2rem black solid;
+        background: var(--foreground-1);
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    nav>a#home-button {
+        display: block;
+        font-size: 2rem;
+        color: black;
+        font-style: normal;
+        text-decoration: none;
+    }
+
+    #account-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+
+        cursor: pointer;
+        border: none;
+        background: var(--foreground-2);
+        border: .1rem black solid;
+        border-radius: 100%;
+    }
+
+    #account-button>img {
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+    }
+</style>

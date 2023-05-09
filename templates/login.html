@@ -1,6 +1,25 @@
-{% extends "layout.html" %}
-{% block title %}Login{% endblock %}
-{% block body %}
-{% include "login-box.html"%}
-{% endblock %}
+{% extends "./components/layout.html" %}
 
+{% block title %}Login{% endblock %}
+
+
+{% block body %}
+    <style>
+        #login-box-container {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        #login-box-position {
+            position: absolute;
+            top: 20vh;
+        }
+    </style>
+    <div id="login-box-container">
+        <div id="login-box-position">
+            {% include "./components/login-box.html"%}
+        </div>
+    </div>
+{% endblock %}

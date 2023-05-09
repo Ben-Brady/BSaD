@@ -1,7 +1,17 @@
-<form id="login-form">
-  <span>Please Login to Gain Access</span>
-  <input placeholder="Username">
-  <input type="password" placeholder="Password">
+<form id="login-form" method="post">
+  <div>
+    <span id="login-header">Please Login to Gain Access</span>
+    <span id="login-error">{{ error or "" }}</span>
+  </div>
+  <input
+    name="username"
+    placeholder="Username"
+  >
+  <input
+    name="password"
+    type="password"
+    placeholder="Password"
+  >
   <button>
     Login
   </button>
@@ -25,8 +35,18 @@
     place-items: center;
   }
 
-  #login-form>span {
+  #login-form span {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  #login-form #login-header {
     color: #f1f0ef;
+  }
+
+  #login-form #login-error {
+    color: #ff2525;
   }
 
   #login-form>input {

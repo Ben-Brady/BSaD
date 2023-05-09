@@ -1,0 +1,36 @@
+<script>
+  async function update_role() {
+    // await updateRole(username, role)
+  }
+</script>
+
+<h1>Admin Panel</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Role</th>
+  </tr>
+  {% for account in accounts %}
+  <tr>
+    <td>{{ account.display_name }}</td>
+    <td>
+      <select onchange="test">
+        {% for role in ['application', 'operate', 'resiliency', 'admin'] %}
+          <option
+            value="{{role}}"
+            {% if account.role == role %}selected{% endif %}
+          >
+            {{ role.title() }}
+          </option>
+        {% endfor %}
+      </select>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<style>
+table {
+  margin-top: 1rem;
+}
+</style>

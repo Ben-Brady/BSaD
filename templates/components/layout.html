@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>DWK | {% block title %} {% endblock %}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comme">
+    <link rel='stylesheet' type='text/css' media='screen' href='/static/main.css'>
+    <style>
+        body {
+            font-family: 'Comme', serif;
+
+            --background-1: #F1F0EF;
+            --background-2: #979592;
+            --foreground-1: #3D3935;
+            --foreground-2: #313030;
+            --highlight: #00477B;
+
+            background: var(--background-2);
+
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+
+            display: grid;
+            grid-template-columns: 5rem 1fr;
+        }
+
+        main {
+            margin: 2rem;
+        }
+    </style>
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% include "./components/header.html" with context %}
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+</body>
+</html>
