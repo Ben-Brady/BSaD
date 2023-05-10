@@ -1,5 +1,5 @@
 from flask import request, redirect, render_template, redirect, Request
-from modules import account
+from modules import users
 
 
 def get_login():
@@ -11,19 +11,19 @@ def get_login():
 
 
 def post_login():
-    username = str(request.form.get("username"))
+    user_id = str(request.form.get("username"))
     password = str(request.form.get("password"))
-    success = account.login(username, password)
+    success = users.login(user_id, password)
 
     if success == False:
-        return redirect("/login?error=Login%20Failed")
-    else:
-        user = account.get_account(username)
-        token = account.create_token(user)
+        return redirect(f"{request.path}?error=Login%20Failed")
 
-        resp = redirect("/")
-        resp.set_cookie("token", token)
-        return resp
+    user = users.get_user(user_id)
+    token = users.create_auth_token(user)
+
+    resp = redirect("/")
+    resp.set_cookie("token", token)
+    return resp
 
 
 def get_logout():
@@ -32,13 +32,13 @@ def get_logout():
     return resp
 
 
-def parse_token(req: Request) -> account.Account|None:
+def parse_token(req: Request) -> users.User | None:
     token = req.cookies.get("token")
     if token is None:
         return None
 
     try:
-        user = account.decode_token(token)
+        user = users.decode_auth_token(token)
     except Exception:
         return None
 
