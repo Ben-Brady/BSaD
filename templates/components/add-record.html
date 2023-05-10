@@ -1,0 +1,65 @@
+
+
+<link rel="stylesheet" href="/static/add-record.css">
+<div>
+    <header class="header">
+        <h1 class="recordTitle">New Application Entry</h1>
+        <button class="generalBtn submitBtn">Submit Entry</button>
+        <button class="generalBtn exitBtn">X</button>
+    </header>
+
+    <ul class="propertiesTable">
+
+        <li class="fieldName">Application Name:</li>
+        <li>
+            <input class="valueInput">
+        </li>
+        <li class="fieldName">Application ID:</li>
+        <li>
+            <input class="valueInput">
+        </li>
+        <li class="fieldName">Primary Location:</li>
+        <li>
+            <input class="valueInput">
+        </li>
+        <li class="fieldName">Alternate Location:</li>
+        <li>
+            <input class="valueInput">
+        </li>
+        <li class="fieldName">Application Staff members associated:</li>
+        <li>
+            <div class="propertyMultipleValuesContainer">
+                <input class="valueInput">
+                <button class="generalBtn addMemberBtn">Add member</button>
+            </div>
+        </li>
+        <li class="fieldName">Operate Staff members associated:</li>
+        <li>
+            <div class="propertyMultipleValuesContainer">
+                <input class="valueInput">
+                <button class="generalBtn addMemberBtn">Add member</button>
+            </div>
+        </li>
+        <li class="fieldName">Components:</li>
+        <li>
+            <div class="propertyMultipleValuesContainer">
+                <input class="valueInput">
+                <select class="spaceOnTheLeft">
+                    <option value="0">Compliancy</option>
+                    <option class="greenColor" value="1">Compliant</option>
+                    <option class="redColor" value="2">Non-Compliant</option>
+                </select>
+            </div>
+        </li>
+        <li class="fieldName">Compliancy-status:</li>
+        <li>
+            <label class="compliancyLabel"></label>
+        </li>
+        <li class="fieldName">TRAP documents:</li>
+        <li>
+            <input class="valueInput">
+        </li>
+    </ul>
+</div>
+
+<script src="/static/add-record.js"></script>

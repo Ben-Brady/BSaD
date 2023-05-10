@@ -1,0 +1,129 @@
+
+/* Header styles. */
+
+.header
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.recordTitle
+{
+    font-size: 36px;
+    text-decoration: underline;
+}
+
+.generalBtn
+{
+    background-color: #005075;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+}
+
+.submitBtn
+{
+    width: 150px;
+    height: 50px;
+    margin-left: 215px;
+}
+
+.exitBtn
+{
+    margin-left: auto;
+    height: 50px;
+    width: 50px;
+}
+
+
+/*  */
+
+/* Properties styles. */
+
+.propertiesTable
+{
+    margin-top: 25px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr auto auto auto 1fr;
+    row-gap: 10px;
+    column-gap: 30px;
+}
+
+.fieldName
+{
+    font-size: 18px;
+}
+
+.valueInput
+{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: #D4D4D4;
+    height: 100%;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.propertyMultipleValuesContainer
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.addMemberBtn
+{
+    margin-left: 5px;
+    width: 30%;
+}
+
+.multipleValuesList
+{
+    list-style-type: disc;
+    margin-left: 15px;
+    font-size: small;
+}
+
+.deleteBtn
+{
+    margin-left: 5px;
+    width: 20px;
+    height: 15px;
+    border-radius: 0;
+    font-size: small;
+}
+
+.spacingBetweenListItems
+{
+    margin-top: 3px;
+}
+
+.spaceOnTheLeft
+{
+    margin-left: 5px;
+}
+
+.greenColor
+{
+    color: #04AA6B;
+}
+
+.redColor
+{
+    color: #E53E31;
+}
+
+.compliancyLabel
+{
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: #D4D4D4;
+    height: 100%;
+    width: 100%;
+    padding-left: 5px;
+}
