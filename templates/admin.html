@@ -7,12 +7,26 @@
     <span id="admin-title">
         Admin Panel
     </span>
-    {% include "./components/create-user.html" %}
-    {% include "./components/user-table.html" %}
+    <div id="container">
+        <div>
+            {% include "./components/create-user.html" %}
+            {% include "./components/user-table.html" %}
+        </div>
+    </div>
     <style>
         #admin-title {
             font-size: 40px;
             color: #313030;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+        #container>div {
+            display: flex;
+            gap: 3rem;
         }
     </style>
 {% endblock %}

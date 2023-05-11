@@ -1,0 +1,173 @@
+{% extends "./components/layout.html" %}
+
+{% block title %}Application Records{% endblock %}
+
+
+{% block body %}
+<div class="record-filter">
+    <div class="filter-header">
+        <span>
+            Search Testing Records
+        </span>
+    </div>
+    <div class="filter-content">
+        <div class="filter-date">
+            <label>From</label>
+            <input type="datetime-local">
+        </div>
+        <div class="filter-date">
+            <label>To</label>
+            <input type="datetime-local">
+        </div>
+        <div class="filter-buttons">
+            <button>
+                Search
+            </button>
+            <button>
+                Export<br/>Selected
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="record-list">
+    {% for x in range(30) %}
+    <div class="record">
+        <span class="record-header">
+            Test {{x}}
+        </span>
+        <div>
+            <img
+                class="record-icon"
+                src="/static/folder.svg"
+            >
+        </div>
+        <span>
+            {{ x }}/06/2023
+        </span>
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+    main {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-around
+    }
+
+    .record-filter {
+        width: 30vw;
+        height: fit-content;
+        border: .1rem solid black;
+
+    }
+    .filter-content {
+        padding: 1rem;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+    }
+    .filter-header {
+        width: 100%;
+        height: 3rem;
+        background: #313030;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filter-header>span {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        line-height: 3rem;
+    }
+
+    .filter-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .filter-date {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem
+    }
+
+    .filter-date>label {
+        display: block;
+        width: 5rem;
+        text-align: right;
+    }
+
+    .filter-buttons>button {
+        color: #313030;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: .1rem solid black;
+        border-radius: .5rem;
+        font-size: 16px;
+    }
+
+    .record-list {
+        width: 60vw;
+        height: 80vh;
+        border: .1rem solid black;
+
+        display: flex;
+        gap: 1rem;
+        flex-flow: row wrap;
+        justify-content: center;
+        overflow-y: auto;
+    }
+
+    .record {
+        height: 12rem;
+        width: 15rem;
+        background: #D9D9D9;
+        border-radius: 1rem;
+        border: .1rem black solid;
+
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .record div {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .record img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .record-header {
+        display: block;
+        margin-top: 1rem;
+        width: 100%;
+
+        font-size: 32px;
+        text-align: center;
+        color: #313030;
+    }
+
+    .overdue {
+        color: red;
+    }
+
+    .due {
+        color: #00477B;
+        text-align: center;
+    }
+</style>
+{% endblock %}

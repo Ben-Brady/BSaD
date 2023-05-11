@@ -1,15 +1,86 @@
 <script>
   async function create_user(id, name, role) {
+    console.log({ id, name, role });
   }
+
+  document.getElementById("add-form").addEventListener("submit", () => {
+    const id = document.getElementByName("id").value;
+    const name = document.getElementByName("name").value;
+    const role = document.getElementByName("role").value;
+    create_user(id, name, role);
+  })
 </script>
 
-<div id="add-continaer">
+
+<div id="add-container">
   <div id="add-header">
+    <span>
+      Create User
+    </span>
   </div>
+  <form id="add-form">
+    <div>
+      <label for="id">User ID</label >
+      <input name="id" type="text" placeholder="">
+    </div>
+    <div>
+      <label for="name">Name</label >
+      <input name="name" type="text" placeholder="">
+    </div>
+    <div>
+      <label for="role">Role</label>
+      <select name="role">
+        <option value="application">Application</option>
+        <option value="operations">Operations</option>
+        <option value="resiliency">Rresiliency</option>
+      </select>
+    </div>
+    <input
+      type="submit"
+      value="Create User"
+    >
+  </form>
 </div>
 
 <style>
-div {
+#add-container {
   margin-top: 1rem;
+  width: 24rem;
+  border: .1rem solid black;
+}
+
+#add-header {
+  height: 3rem;
+  width: 100%;
+  background: #313030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#add-header > *{
+  color: #F1F0EF;
+  font-size: 20px;
+  font-weight: ;
+  text-align: center;
+}
+
+form#add-form {
+  display: grid;
+  align-items: center;
+  margin: 1rem;
+}
+
+form#add-form>div{
+  display: flex;
+  justify-content: center;
+}
+
+form#add-form>label {
+  width: ;
+
+}
+
+form#add-form>:not(label) {
+
 }
 </style>

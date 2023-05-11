@@ -30,7 +30,7 @@
   }
 </script>
 
-<table cellspacing="0" cellpadding="0">
+<table id="user-table" cellspacing="0" cellpadding="0">
   <tr id="table-header">
     <th class="id-header">User ID</th>
     <th class="name-header">Name</th>
@@ -46,16 +46,24 @@
         <span>Admin</span>
       {% else %}
         <select class="role-select" data-id="{{ account.id }}">
-        {% for role in ['application', 'operations', 'resiliency'] %}
           <option
-            {% if account.role == role %}
-              selected=""
-            {% endif %}
-            value="{{role}}"
+            {% if account.role == "application" %} selected="" {% endif %}
+            value="application"
           >
-            {{ role.title() }}
+            Application
           </option>
-        {% endfor %}
+          <option
+            {% if account.role == "operations" %} selected="" {% endif %}
+            value="operations"
+          >
+            Operations
+          </option>
+          <option
+            {% if account.role == "resiliency" %} selected="" {% endif %}
+            value="resiliency"
+          >
+            Rresiliency
+          </option>
       {% endif %}
     </select>
     </td>
@@ -71,44 +79,44 @@
 </table>
 
 <style>
-table {
+#user-table {
   margin-top: 1rem;
 }
-table * {
+
+#user-table * {
   color: #313030;
 }
 
-
-tr {
+#user-table tr {
   height: 3rem;
 }
 
 .id-header,
 .name-header,
 .role-header {
-  width: 10rem;
+  width: 14rem;
 }
 .delete-header {
   width: 4rem;
 }
 
 #table-header {
-  background: #313030;
+  background: #313030 !important;
   color: #F1F0EF;
 }
 #table-header>* {
   color: #F1F0EF;
 }
 
-tr:nth-child(even) {
+#user-table tr:nth-child(even) {
   background: #F1F0EF;
 }
 
-tr:nth-child(odd) {
+#user-table tr:nth-child(odd) {
   background: #D9D9D9;
 }
 
-td {
+#user-table td {
   text-align: center;
 }
 
@@ -121,12 +129,12 @@ select {
   border-radius: .5rem;
 }
 
-button {
+#user-table button {
   width: 2rem;
   height: 2rem;
 }
 
-button>img {
+#user-table button>img {
   height: 100%;
   width: 100%;
 }
